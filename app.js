@@ -93,8 +93,12 @@ const processIdentifiers = (identifiers) => {
 }
 
 // Tyto dva řádky uprav podle zadání
-const identifikatory = []
-const emaily = []
+const identifikatory = nezaplaceneObjednavky.map((cisla) => {
+	return cisla.id
+})
+const emaily = nezaplaceneObjednavky.map((obj) => {
+	return `${obj.uzivatel.jmeno} <${obj.uzivatel.email}>`
+})
 
 processIdentifiers(identifikatory)
 processEmails(emaily)
